@@ -46,7 +46,7 @@
 | `job_id`    | `FK int:job` | **Required**.|
 | `skill_name`| `string` | **Required**.|
 
-#### add Required skills to the opened job vacancy position
+#### add first and last name of the applicant tp register to the position
 ```http
   POST /api/applicant/add-info/
   {
@@ -61,7 +61,7 @@
 | `last_name`| `string` | **Required**.|
 
 
-#### add Required skills to the opened job vacancy position
+#### add skills of the applicant who applied for the job
 ```http
   POST /api/applicant/add-skills/
   {
