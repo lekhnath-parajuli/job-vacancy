@@ -1,17 +1,77 @@
-job-vacancy
 
-/api/qualified/ to see all the candidates who are qualified for the job
+## job vacancy 
 
-/api/vacancy/ too see all the vacancies that are open currently
+#### get a list of all applicants who are qualified
 
-/api/applicant/ too see the list of all applicants who have applied for the position
+```http
+  GET /api/qualified/
+```
 
-/api/vacancy/add-position/ too open a vacancy for a perticular position { "job_title": "This field is required." }
+#### get a list of all vacancy position opened currently
 
-/api/vacancy/add-skills/ too add skills to perticular vacancy which is opened { "job_id": "This field is required.", "skill_name": "This field is required." }
+```http
+  GET /api/vacancy/
+```
 
-/api/applicant/add-info/ applicants and apply here by providing info like first and last name { "first_name": "This field is required.", "last_name": "This field is required." }
+#### get a list of all people who have applied fot the position
 
-/api/applicant/add-skills/ add skills of a perticular applicant
+```http
+  GET /api/applicant/ 
+```
 
-{ "candidate_id":"This field is required.", "skill_name": "This field is required." }
+#### add a new job vacancy position
+```http
+  POST /api/vacancy/add-position/
+  {
+    "job_title": "string"
+  }
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+| `job_title` | `string` | **Required**.|
+
+
+#### add Required skills to the opened job vacancy position
+```http
+  POST /api/vacancy/add-position/
+  {
+    "job_id": FK int:job,
+    "skill_name": "string"
+  }
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+| `job_id`    | `FK int:job` | **Required**.|
+| `skill_name`| `string` | **Required**.|
+
+#### add Required skills to the opened job vacancy position
+```http
+  POST /api/applicant/add-info/
+  {
+    "first_name": "string",
+    "last_name": "string"
+  }
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+| `first_name`    | `string` | **Required**.|
+| `last_name`| `string` | **Required**.|
+
+
+#### add Required skills to the opened job vacancy position
+```http
+  POST /api/applicant/add-skills/
+  {
+    "job_id": FK int:applicant,
+    "skill_name": "string"
+  }
+```
+
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
+| `candidate_id`    | `FK int:applicant` | **Required**.|
+| `skill_name`| `string` | **Required**.|
+
