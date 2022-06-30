@@ -1,6 +1,18 @@
 
 ## job vacancy 
 
+### installation process
+
+```http
+  download/clone file
+  activate env : source ./bin/activate
+  install packages: pip install requirements.txt
+  
+  run server:
+  cd src/backend/
+  python manage.py runserver 8000
+```
+
 #### get a list of all applicants who are qualified
 
 ```http
